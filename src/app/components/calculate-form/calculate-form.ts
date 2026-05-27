@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { InvestmentDataModel } from '../../models/investment-data-model';
+import { InvestmentDataModel } from '../../../models/investment-data-model';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -18,7 +18,6 @@ export class CalculateForm {
   };
 
   calculate() {
-    // console.log(this.investimentData.duration);
     this.openTable.emit(this.investimentData);
   }
 }

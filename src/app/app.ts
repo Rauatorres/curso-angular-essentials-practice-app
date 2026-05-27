@@ -1,8 +1,9 @@
 import { Component, signal } from '@angular/core';
-import { Header } from './header/header';
-import { CalculateForm } from './calculate-form/calculate-form';
-import { ResultsTable } from './results-table/results-table';
+import { Header } from './components/header/header';
+import { CalculateForm } from './components/calculate-form/calculate-form';
+import { ResultsTable } from './components/results-table/results-table';
 import { type InvestmentDataModel } from '../models/investment-data-model';
+import { CalculateService } from './services/calculate.service';
 // import { RouterOutlet } from '@angular/router';
 
 @Component({
@@ -17,27 +18,12 @@ export class App {
   isResultsTableOpen: boolean = false;
   investmentResults: InvestmentResult[] = [];
 
+  constructor(private calculateService: CalculateService) {}
+
   calculate(data: InvestmentDataModel) {
     if (data.duration > 0) {
-      this.investmentResults = [];
-
       this.isResultsTableOpen = true;
-
-      let investmentValue = data.initialInvestment;
-
-      for (let year = 1; year <= data.duration; year++) {
-        const interestEarnedInYear = investmentValue * (data.expectedReturn / 100);
-        investmentValue += interestEarnedInYear + data.annualInvestment;
-        const totalInterest =
-          investmentValue - data.annualInvestment * year - data.initialInvestment;
-        this.investmentResults.push({
-          year: year,
-          investimentValue: investmentValue,
-          yearInterest: interestEarnedInYear,
-          totalInterest: totalInterest,
-          investedCapital: data.initialInvestment + data.annualInvestment * year,
-        });
-      }
+      this.investmentResults = this.calculateService.calculate(data);
     } else {
       this.isResultsTableOpen = false;
     }
