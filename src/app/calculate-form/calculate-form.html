@@ -1,1 +1,33 @@
-<p>calculate-form works!</p>
+<form>
+  <div class="input-group">
+    <label>
+      <p>INITIAL INVESTMENT</p>
+      <input
+        type="number"
+        name="initial_investment"
+        [(ngModel)]="investimentData.initialInvestment"
+      />
+    </label>
+    <label>
+      <p>ANNUAL INVESTMENT</p>
+      <input
+        type="number"
+        name="annual_investment"
+        [(ngModel)]="investimentData.annualInvestment"
+      />
+    </label>
+  </div>
+  <div class="input-group">
+    <label>
+      <p>EXPECTED RETURN</p>
+      <input type="number" name="expected_return" [(ngModel)]="investimentData.expectedReturn" />
+    </label>
+    <label>
+      <p>DURATION</p>
+      <input type="number" name="duration" [(ngModel)]="investimentData.duration" />
+    </label>
+  </div>
+  <div class="input-group">
+    <button type="submit" (click)="calculate()">CALCULATE</button>
+  </div>
+</form>

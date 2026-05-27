@@ -1,11 +1,9 @@
 import { Component } from '@angular/core';
+import { CalculateForm } from '../calculate-form/calculate-form';
 
 @Component({
   selector: 'app-header',
-  imports: [],
   templateUrl: './header.html',
   styleUrl: './header.css',
 })
-export class Header {
-
-}
+export class Header {}

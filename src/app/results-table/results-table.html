@@ -1,0 +1,20 @@
+<table>
+  <thead>
+    <th>Year</th>
+    <th>Investiment Value</th>
+    <th>Interest (Year)</th>
+    <th>Total Interest</th>
+    <th>Invested Capital</th>
+  </thead>
+  <tbody>
+    @for (result of results; track $index) {
+      <tr>
+        <td>{{ result.year }}</td>
+        <td>{{ formatNumber(result.investimentValue) }}</td>
+        <td>{{ formatNumber(result.yearInterest) }}</td>
+        <td>{{ formatNumber(result.totalInterest) }}</td>
+        <td>{{ formatNumber(result.investedCapital) }}</td>
+      </tr>
+    }
+  </tbody>
+</table>

@@ -1,1 +1,9 @@
 <app-header />
+
+<app-calculate-form (openTable)="calculate($event)" />
+
+@if (isResultsTableOpen) {
+  <app-results-table [results]="investmentResults" />
+} @else {
+  <div class="initial_message">Please enter some value and press "Calculate"</div>
+}
