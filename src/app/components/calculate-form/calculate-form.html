@@ -1,33 +1,33 @@
 <form>
   <div class="input-group">
-    <label>
-      <p>INITIAL INVESTMENT</p>
-      <input
-        type="number"
-        name="initial_investment"
-        [(ngModel)]="investimentData.initialInvestment"
-      />
-    </label>
-    <label>
-      <p>ANNUAL INVESTMENT</p>
-      <input
-        type="number"
-        name="annual_investment"
-        [(ngModel)]="investimentData.annualInvestment"
-      />
-    </label>
+    <app-user-input
+      [title]="'INITIAL INVESTMENT'"
+      [name]="'initial_investment'"
+      [data]="investimentData"
+      [propertyName]="'initialInvestment'"
+    />
+    <app-user-input
+      [title]="'ANNUAL INVESTMENT'"
+      [name]="'annual_investment'"
+      [data]="investimentData"
+      [propertyName]="'annualInvestment'"
+    />
   </div>
   <div class="input-group">
-    <label>
-      <p>EXPECTED RETURN</p>
-      <input type="number" name="expected_return" [(ngModel)]="investimentData.expectedReturn" />
-    </label>
-    <label>
-      <p>DURATION</p>
-      <input type="number" name="duration" [(ngModel)]="investimentData.duration" />
-    </label>
+    <app-user-input
+      [title]="'EXPECTED RETURN'"
+      [name]="'expected_return'"
+      [data]="investimentData"
+      [propertyName]="'expectedReturn'"
+    />
+    <app-user-input
+      [title]="'DURATION'"
+      [name]="'duration'"
+      [data]="investimentData"
+      [propertyName]="'duration'"
+    />
   </div>
-  <div class="input-group">
+  <p>
     <button type="submit" (click)="calculate()">CALCULATE</button>
-  </div>
+  </p>
 </form>
