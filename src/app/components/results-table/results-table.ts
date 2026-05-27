@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { InvestmentDataModel } from '../../../models/investment-data-model';
+import { InvestmentDataModel } from '../../models/investment-data-model';
 
 @Component({
   selector: 'app-results-table',

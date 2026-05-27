@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { InvestmentDataModel } from '../../models/investment-data-model';
+import { InvestmentDataModel } from '../models/investment-data-model';
 
 @Injectable({
   providedIn: 'root',
