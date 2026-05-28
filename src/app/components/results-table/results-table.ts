@@ -1,19 +1,12 @@
+import { CurrencyPipe } from '@angular/common';
 import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-results-table',
-  imports: [],
+  imports: [CurrencyPipe],
   templateUrl: './results-table.html',
   styleUrl: './results-table.css',
 })
 export class ResultsTable {
   @Input({ required: true }) results!: InvestmentResultModel[];
-
-  formatNumber(value: number) {
-    const formatter = new Intl.NumberFormat('en-US', {
-      style: 'currency',
-      currency: 'USD',
-    });
-    return formatter.format(value);
-  }
 }

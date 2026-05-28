@@ -10,10 +10,10 @@
     @for (result of results; track $index) {
       <tr>
         <td>{{ result.year }}</td>
-        <td>{{ formatNumber(result.investimentValue) }}</td>
-        <td>{{ formatNumber(result.yearInterest) }}</td>
-        <td>{{ formatNumber(result.totalInterest) }}</td>
-        <td>{{ formatNumber(result.investedCapital) }}</td>
+        <td>{{ result.investimentValue | currency }}</td>
+        <td>{{ result.yearInterest | currency }}</td>
+        <td>{{ result.totalInterest | currency }}</td>
+        <td>{{ result.investedCapital | currency }}</td>
       </tr>
     }
   </tbody>
