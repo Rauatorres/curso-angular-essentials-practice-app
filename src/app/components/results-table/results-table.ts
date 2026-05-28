@@ -1,5 +1,5 @@
 import { CurrencyPipe } from '@angular/common';
-import { Component, input } from '@angular/core';
+import { Component, computed, input } from '@angular/core';
 import { CalculateService } from '../../services/calculate.service';
 
 @Component({
@@ -11,7 +11,5 @@ import { CalculateService } from '../../services/calculate.service';
 export class ResultsTable {
   constructor(private calculateService: CalculateService) {}
 
-  get results() {
-    return this.calculateService.result();
-  }
+  results = computed(() => this.calculateService.result());
 }
