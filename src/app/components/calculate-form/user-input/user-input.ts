@@ -1,7 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { required } from '@angular/forms/signals';
-import { InvestmentDataModel } from '../../../models/investment-data-model';
 import { FormsModule } from '@angular/forms';
+import { InvestmentDataModel } from '../../../models/investment-data.model';
 
 @Component({
   selector: 'app-user-input',

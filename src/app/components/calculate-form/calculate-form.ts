@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { InvestmentDataModel } from '../../models/investment-data-model';
+import { InvestmentDataModel } from '../../models/investment-data.model';
 import { FormsModule } from '@angular/forms';
 import { UserInput } from './user-input/user-input';
 

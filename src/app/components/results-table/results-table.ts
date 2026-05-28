@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { InvestmentDataModel } from '../../models/investment-data-model';
 
 @Component({
   selector: 'app-results-table',
@@ -8,7 +7,7 @@ import { InvestmentDataModel } from '../../models/investment-data-model';
   styleUrl: './results-table.css',
 })
 export class ResultsTable {
-  @Input({ required: true }) results!: InvestmentResult[];
+  @Input({ required: true }) results!: InvestmentResultModel[];
 
   formatNumber(value: number) {
     const formatter = new Intl.NumberFormat('en-US', {

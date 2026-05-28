@@ -1,4 +1,4 @@
-interface InvestmentResult {
+interface InvestmentResultModel {
   year: number;
   investimentValue: number;
   yearInterest: number;
