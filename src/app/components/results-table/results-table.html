@@ -1,20 +1,24 @@
-<table>
-  <thead>
-    <th>Year</th>
-    <th>Investiment Value</th>
-    <th>Interest (Year)</th>
-    <th>Total Interest</th>
-    <th>Invested Capital</th>
-  </thead>
-  <tbody>
-    @for (result of results(); track $index) {
-      <tr>
-        <td>{{ result.year }}</td>
-        <td>{{ result.investimentValue | currency }}</td>
-        <td>{{ result.yearInterest | currency }}</td>
-        <td>{{ result.totalInterest | currency }}</td>
-        <td>{{ result.investedCapital | currency }}</td>
-      </tr>
-    }
-  </tbody>
-</table>
+@if (results.length > 0) {
+  <table>
+    <thead>
+      <th>Year</th>
+      <th>Investiment Value</th>
+      <th>Interest (Year)</th>
+      <th>Total Interest</th>
+      <th>Invested Capital</th>
+    </thead>
+    <tbody>
+      @for (result of results; track $index) {
+        <tr>
+          <td>{{ result.year }}</td>
+          <td>{{ result.investimentValue | currency }}</td>
+          <td>{{ result.yearInterest | currency }}</td>
+          <td>{{ result.totalInterest | currency }}</td>
+          <td>{{ result.investedCapital | currency }}</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+} @else {
+  <div class="initial_message">Please enter some value and press "Calculate"</div>
+}

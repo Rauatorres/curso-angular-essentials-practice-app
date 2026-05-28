@@ -1,7 +1,8 @@
-import { Component, output, signal } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { InvestmentDataModel } from '../../models/investment-data.model';
 import { FormsModule } from '@angular/forms';
 import { UserInput } from './user-input/user-input';
+import { CalculateService } from '../../services/calculate.service';
 
 @Component({
   selector: 'app-calculate-form',
@@ -10,7 +11,6 @@ import { UserInput } from './user-input/user-input';
   styleUrl: './calculate-form.css',
 })
 export class CalculateForm {
-  openTable = output<InvestmentDataModel>();
   investimentData = signal<InvestmentDataModel>({
     initialInvestment: 0,
     annualInvestment: 0,
@@ -18,7 +18,15 @@ export class CalculateForm {
     duration: 0,
   });
 
+  constructor(private calculateService: CalculateService) {}
+
   calculate() {
-    this.openTable.emit(this.investimentData());
+    this.calculateService.calculate(this.investimentData());
+    this.investimentData.set({
+      initialInvestment: 0,
+      annualInvestment: 0,
+      expectedReturn: 0,
+      duration: 0,
+    });
   }
 }

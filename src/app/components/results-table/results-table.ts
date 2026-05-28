@@ -1,5 +1,6 @@
 import { CurrencyPipe } from '@angular/common';
 import { Component, input } from '@angular/core';
+import { CalculateService } from '../../services/calculate.service';
 
 @Component({
   selector: 'app-results-table',
@@ -8,5 +9,9 @@ import { Component, input } from '@angular/core';
   styleUrl: './results-table.css',
 })
 export class ResultsTable {
-  results = input.required<InvestmentResultModel[]>();
+  constructor(private calculateService: CalculateService) {}
+
+  get results() {
+    return this.calculateService.result();
+  }
 }
