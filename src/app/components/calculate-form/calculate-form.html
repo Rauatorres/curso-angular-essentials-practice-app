@@ -3,28 +3,24 @@
     <app-user-input
       [title]="'INITIAL INVESTMENT'"
       [name]="'initial_investment'"
-      [data]="investimentData"
-      [propertyName]="'initialInvestment'"
+      [(data)]="investimentData().initialInvestment"
     />
     <app-user-input
       [title]="'ANNUAL INVESTMENT'"
       [name]="'annual_investment'"
-      [data]="investimentData"
-      [propertyName]="'annualInvestment'"
+      [(data)]="investimentData().annualInvestment"
     />
   </div>
   <div class="input-group">
     <app-user-input
       [title]="'EXPECTED RETURN'"
       [name]="'expected_return'"
-      [data]="investimentData"
-      [propertyName]="'expectedReturn'"
+      [(data)]="investimentData().expectedReturn"
     />
     <app-user-input
       [title]="'DURATION'"
       [name]="'duration'"
-      [data]="investimentData"
-      [propertyName]="'duration'"
+      [(data)]="investimentData().duration"
     />
   </div>
   <p>

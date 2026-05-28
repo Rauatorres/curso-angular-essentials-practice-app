@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input, Input, model, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { InvestmentDataModel } from '../../../models/investment-data.model';
 
@@ -9,10 +9,9 @@ import { InvestmentDataModel } from '../../../models/investment-data.model';
   styleUrl: './user-input.css',
 })
 export class UserInput {
-  @Input({ required: true }) title!: string;
-  @Input({ required: true }) name!: string;
-  @Input({ required: true }) data!: InvestmentDataModel;
-  @Input({ required: true }) propertyName!: keyof InvestmentDataModel;
+  title = input.required<string>();
+  name = input.required<string>();
+  data = model.required<number>();
 
-  id = crypto.randomUUID();
+  id = signal(crypto.randomUUID());
 }

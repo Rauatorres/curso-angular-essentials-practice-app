@@ -15,17 +15,17 @@ import { CalculateService } from './services/calculate.service';
 })
 export class App {
   protected readonly title = signal('essentials-practice');
-  isResultsTableOpen: boolean = false;
-  investmentResults: InvestmentResultModel[] = [];
+  isResultsTableOpen = signal<boolean>(false);
+  investmentResults = signal<InvestmentResultModel[]>([]);
 
   constructor(private calculateService: CalculateService) {}
 
   calculate(data: InvestmentDataModel) {
     if (data.duration > 0) {
-      this.isResultsTableOpen = true;
-      this.investmentResults = this.calculateService.calculate(data);
+      this.isResultsTableOpen.set(true);
+      this.investmentResults.set(this.calculateService.calculate(data));
     } else {
-      this.isResultsTableOpen = false;
+      this.isResultsTableOpen.set(false);
     }
   }
 }

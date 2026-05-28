@@ -1,5 +1,5 @@
 import { CurrencyPipe } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 @Component({
   selector: 'app-results-table',
@@ -8,5 +8,5 @@ import { Component, Input } from '@angular/core';
   styleUrl: './results-table.css',
 })
 export class ResultsTable {
-  @Input({ required: true }) results!: InvestmentResultModel[];
+  results = input.required<InvestmentResultModel[]>();
 }
